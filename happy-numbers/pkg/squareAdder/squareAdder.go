@@ -3,7 +3,6 @@ package squareAdder
 import (
 	"fmt"
 	"strconv"
-	"sync"
 )
 
 func giveDigits(x int) (y []int) {
@@ -32,15 +31,16 @@ func squareAdder(original int, x int, iteration int) (int, error) {
 	if iteration <= 100 {
 		if result == 1 {
 			return original, nil
-		} else if result != x {
+		} else {
 			iteration++
-			squareAdder(original, result, iteration)
+			return squareAdder(original, result, iteration)
 		}
 	}
 	return 0, fmt.Errorf("number %d has had 100 iterations and wasn't able to arrive at 1", x)
 }
 
-func InvokeChecker(id int, inputChn chan int, resultChn chan int, wg *sync.WaitGroup) {
+func InvokeChecker(id int, inputChn chan int, resultChn chan int) {
+	// , wg *sync.WaitGroup) {
 	for number := range inputChn {
 		// fmt.Printf("worker: %d, number: %d\n", id, number)
 		result, err := squareAdder(number, number, 0)
@@ -48,5 +48,5 @@ func InvokeChecker(id int, inputChn chan int, resultChn chan int, wg *sync.WaitG
 			resultChn <- result
 		}
 	}
-	wg.Done()
+	// wg.Done()
 }
