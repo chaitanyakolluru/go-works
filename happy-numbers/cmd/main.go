@@ -6,40 +6,27 @@ import (
 )
 
 func printResults(resultChn chan int) {
-	// , wg *sync.WaitGroup) {
 	for result := range resultChn {
 		fmt.Printf("Number: %d\n", result)
-		// wg.Done()
 	}
 }
 
 func main() {
 	limit := 100
-	// var wg sync.WaitGroup
 	inputChn := make(chan int, limit)
-	resultChn := make(chan int, limit)
+	resultChn := make(chan int, 10)
 
 	for i := 0; i < limit; i++ {
-		// wg.A/dd(1)
 		inputChn <- i
 	}
 	close(inputChn)
 
-	for i := 0; i <= 10; i++ {
+	for i := 0; i <= 5; i++ {
 		go squareAdder.InvokeChecker(i, inputChn, resultChn)
-		// , &wg)
+
 	}
 
-	// go printResults(resultChn)
-	// , &wg)
-
-	// wg.Wait()
-	fmt.Printf("Number: %d\n", <-resultChn)
-	fmt.Printf("Number: %d\n", <-resultChn)
-	fmt.Printf("Number: %d\n", <-resultChn)
-	fmt.Printf("Number: %d\n", <-resultChn)
-	fmt.Printf("Number: %d\n", <-resultChn)
-	fmt.Printf("Number: %d\n", <-resultChn)
-	fmt.Printf("Number: %d\n", <-resultChn)
-	fmt.Printf("Number: %d\n", <-resultChn)
+	for i := 0; i < 10; i++ {
+		fmt.Printf("Number: %d\n", <-resultChn)
+	}
 }

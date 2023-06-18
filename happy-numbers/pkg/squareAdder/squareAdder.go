@@ -40,13 +40,10 @@ func squareAdder(original int, x int, iteration int) (int, error) {
 }
 
 func InvokeChecker(id int, inputChn chan int, resultChn chan int) {
-	// , wg *sync.WaitGroup) {
 	for number := range inputChn {
-		// fmt.Printf("worker: %d, number: %d\n", id, number)
 		result, err := squareAdder(number, number, 0)
 		if err == nil {
 			resultChn <- result
 		}
 	}
-	// wg.Done()
 }
