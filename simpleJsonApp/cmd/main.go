@@ -1,4 +1,4 @@
-package simpleJsonApp
+package main
 
 import (
 	"simpleJsonApp/internal/crud"

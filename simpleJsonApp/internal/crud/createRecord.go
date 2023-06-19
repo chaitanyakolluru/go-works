@@ -14,19 +14,22 @@ func CreateRecord(c *gin.Context) {
 	var fileRecords []jsonFile.Record
 
 	if err := c.BindJSON(&record); err != nil {
-		log.Fatal(err)
+		log.Fatalf("cannot bind incoming request data, error: %s", err.Error())
 	}
 
 	fileData := jsonFile.OpenFileAndReadData()
-	if err := json.Unmarshal(fileData, &fileRecords); err != nil {
-		log.Fatal(err)
+
+	if len(fileData) != 0 {
+		if err := json.Unmarshal(fileData, &fileRecords); err != nil {
+			log.Fatalf("cannot unmarshall file data, error: %s", err.Error())
+		}
 	}
 
 	fileRecords = append(fileRecords, record)
 
 	fileRecordsJson, err := json.Marshal(fileRecords)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("cannot marshall data to json byte, error: %s", err.Error())
 	}
 
 	jsonFile.WriteIntoFile(fileRecordsJson)
