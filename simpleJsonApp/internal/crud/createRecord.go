@@ -18,12 +18,15 @@ func CreateRecord(c *gin.Context) {
 	}
 
 	fileData := jsonFile.OpenFileAndReadData()
+	noOfItems := len(fileData)
 
-	if len(fileData) != 0 {
+	if noOfItems != 0 {
 		if err := json.Unmarshal(fileData, &fileRecords); err != nil {
 			log.Fatalf("cannot unmarshall file data, error: %s", err.Error())
 		}
 	}
+
+	record.Id = noOfItems + 1
 
 	fileRecords = append(fileRecords, record)
 

@@ -1,7 +1,7 @@
 package jsonFile
 
 type Record struct {
-	Id          int      `json:"id"`
+	Id          int      `json:"id:omitempty"`
 	Name        string   `json:"name"`
 	Age         int      `json:"age"`
 	Designation string   `json:"designation"`
