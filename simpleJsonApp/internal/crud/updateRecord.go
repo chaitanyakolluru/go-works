@@ -10,6 +10,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// UpdateRecord godoc
+//
+//	@Summary		update record
+//
+// @Schemes
+//
+//	@Description	update a record within the json file
+//	@Accept			json
+//	@Produce		json
+//	@Param			record	body		jsonFile.Record		true	"record to be updated"
+//	@Success		200		{body}	jsonFile.Record	"updated record"
+//	@Failure		500		{header}	string	"internal server error"
+//
+//	@Router			/record [put]
 func UpdateRecord(c *gin.Context) {
 	var record jsonFile.Record
 	var fileRecords []jsonFile.Record

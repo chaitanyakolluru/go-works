@@ -30,6 +30,29 @@ info:
   version: 0.1.0
 paths:
   /record:
+    delete:
+      consumes:
+      - application/json
+      description: delete a record within the json file
+      parameters:
+      - description: record to be deleted
+        in: body
+        name: record
+        required: true
+        schema:
+          $ref: '#/definitions/jsonFile.Record'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: deleted record
+          schema:
+            type: body
+        "500":
+          description: internal server error
+          schema:
+            type: header
+      summary: delete record
     post:
       consumes:
       - application/json
@@ -52,7 +75,74 @@ paths:
           description: failure message saying resource already exists
           schema:
             type: header
+        "500":
+          description: internal server error
+          schema:
+            type: header
       summary: create record
+    put:
+      consumes:
+      - application/json
+      description: update a record within the json file
+      parameters:
+      - description: record to be updated
+        in: body
+        name: record
+        required: true
+        schema:
+          $ref: '#/definitions/jsonFile.Record'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: updated record
+          schema:
+            type: body
+        "500":
+          description: internal server error
+          schema:
+            type: header
+      summary: update record
+  /records:
+    get:
+      consumes:
+      - application/json
+      description: gets all records within the json file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: get all records
+          schema:
+            type: body
+        "500":
+          description: internal server error
+          schema:
+            type: header
+      summary: get all records
+  /records/{name}:
+    get:
+      consumes:
+      - application/json
+      description: gets a record within the json file
+      parameters:
+      - description: name
+        in: path
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: get a records
+          schema:
+            type: body
+        "500":
+          description: internal server error
+          schema:
+            type: header
+      summary: get a single record
 produces:
 - application/json
 swagger: "2.0"

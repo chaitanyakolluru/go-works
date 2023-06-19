@@ -9,6 +9,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// GetRecordByName godoc
+//
+//	@Summary		get a single record
+//
+// @Schemes
+//
+//	@Description	gets a record within the json file
+//	@Accept			json
+//	@Produce		json
+//	@Param			name	path			string		true	"name"
+//	@Success		200		{body}		jsonFile.Record	"get a records"
+//	@Failure		500		{header}	string	"internal server error"
+//	@Router			/records/{name}	[get]
 func GetRecordsByName(c *gin.Context) {
 	name := c.Param("name")
 

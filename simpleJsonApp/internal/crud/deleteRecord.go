@@ -10,6 +10,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// DeleteRecord godoc
+//
+//	@Summary		delete record
+//
+// @Schemes
+//
+//	@Description	delete a record within the json file
+//	@Accept			json
+//	@Produce		json
+//	@Param			record	body		jsonFile.Record		true	"record to be deleted"
+//	@Success		200		{body}	jsonFile.Record	"deleted record"
+//	@Failure		500		{header}	string	"internal server error"
+//
+//	@Router			/record [delete]
 func DeleteRecord(c *gin.Context) {
 	var record jsonFile.Record
 	var fileRecords []jsonFile.Record

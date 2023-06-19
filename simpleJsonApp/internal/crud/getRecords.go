@@ -9,6 +9,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// GetRecord godoc
+//
+//	@Summary		get all records
+//
+// @Schemes
+//
+//	@Description	gets all records within the json file
+//	@Accept			json
+//	@Produce		json
+//	@Success		200		{body}	[]jsonFile.Record	"get all records"
+//	@Failure		500		{header}	string	"internal server error"
+//	@Router			/records [get]
 func GetRecords(c *gin.Context) {
 	var fileRecords []jsonFile.Record
 	fileData := jsonFile.OpenFileAndReadData()

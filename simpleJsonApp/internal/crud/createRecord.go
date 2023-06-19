@@ -20,8 +20,9 @@ import (
 //	@Accept			json
 //	@Produce		json
 //	@Param			record	body		jsonFile.Record		true	"record to be created"
-//	@Success		201		{body}	object	"created record"
+//	@Success		201		{body}	jsonFile.Record	"created record"
 //	@Failure		400		{header}	string	"failure message saying resource already exists"
+//	@Failure		500		{header}	string	"internal server error"
 //	@Router			/record [post]
 func CreateRecord(c *gin.Context) {
 	var record jsonFile.Record
