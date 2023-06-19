@@ -1,5 +1,23 @@
 consumes:
 - application/json
+definitions:
+  jsonFile.Record:
+    properties:
+      age:
+        type: integer
+      designation:
+        type: string
+      id:
+        type: integer
+      location:
+        type: string
+      name:
+        type: string
+      todos:
+        items:
+          type: string
+        type: array
+    type: object
 host: localhost:8080
 info:
   contact: {}
@@ -22,7 +40,7 @@ paths:
         name: record
         required: true
         schema:
-          type: object
+          $ref: '#/definitions/jsonFile.Record'
       produces:
       - application/json
       responses:

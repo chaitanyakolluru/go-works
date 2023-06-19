@@ -43,7 +43,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "object"
+                            "$ref": "#/definitions/jsonFile.Record"
                         }
                     }
                 ],
@@ -59,6 +59,34 @@ const docTemplate = `{
                         "schema": {
                             "type": "header"
                         }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "jsonFile.Record": {
+            "type": "object",
+            "properties": {
+                "age": {
+                    "type": "integer"
+                },
+                "designation": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "todos": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
                     }
                 }
             }

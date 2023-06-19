@@ -19,7 +19,7 @@ import (
 //	@Description	create a record within the json file
 //	@Accept			json
 //	@Produce		json
-//	@Param			record	body		object		true	"record to be created"
+//	@Param			record	body		jsonFile.Record		true	"record to be created"
 //	@Success		201		{body}	object	"created record"
 //	@Failure		400		{header}	string	"failure message saying resource already exists"
 //	@Router			/record [post]
