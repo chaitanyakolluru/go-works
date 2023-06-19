@@ -10,6 +10,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateRecord godoc
+//
+//	@Summary		create record
+//
+// @Schemes
+//
+//	@Description	create a record within the json file
+//	@Accept			json
+//	@Produce		json
+//	@Param			record	body		object		true	"record to be created"
+//	@Success		201		{body}	object	"created record"
+//	@Failure		400		{header}	string	"failure message saying resource already exists"
+//	@Router			/record [post]
 func CreateRecord(c *gin.Context) {
 	var record jsonFile.Record
 	var fileRecords []jsonFile.Record

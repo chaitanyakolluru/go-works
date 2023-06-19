@@ -1,0 +1,40 @@
+consumes:
+- application/json
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a simple json app, apis of which will be fed into a crossplane
+    provider.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Simple Json App
+  version: 0.1.0
+paths:
+  /record:
+    post:
+      consumes:
+      - application/json
+      description: create a record within the json file
+      parameters:
+      - description: record to be created
+        in: body
+        name: record
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: created record
+          schema:
+            type: body
+        "400":
+          description: failure message saying resource already exists
+          schema:
+            type: header
+      summary: create record
+produces:
+- application/json
+swagger: "2.0"
