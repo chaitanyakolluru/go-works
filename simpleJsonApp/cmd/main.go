@@ -9,6 +9,7 @@ import (
 func main() {
 	router := gin.Default()
 	router.POST("/record", crud.CreateRecord)
+	router.GET("/records", crud.GetRecords)
 
 	router.Run("localhost:8080")
 }
