@@ -10,6 +10,7 @@ func main() {
 	router := gin.Default()
 	router.POST("/record", crud.CreateRecord)
 	router.GET("/records", crud.GetRecords)
+	router.GET("/records/:name", crud.GetRecordsByName)
 
 	router.Run("localhost:8080")
 }
