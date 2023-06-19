@@ -12,6 +12,7 @@ func main() {
 	router.GET("/records", crud.GetRecords)
 	router.GET("/records/:name", crud.GetRecordsByName)
 	router.PUT("/record", crud.UpdateRecord)
+	router.DELETE("/record", crud.DeleteRecord)
 
 	router.Run("localhost:8080")
 }

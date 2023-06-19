@@ -10,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func UpdateRecord(c *gin.Context) {
+func DeleteRecord(c *gin.Context) {
 	var record jsonFile.Record
 	var fileRecords []jsonFile.Record
 
@@ -26,8 +26,8 @@ func UpdateRecord(c *gin.Context) {
 
 		for index, rec := range fileRecords {
 			if rec.Name == record.Name {
-				fileRecords[index] = record
-				fileRecords[index].Id = rec.Id
+				fileRecords[index] = fileRecords[len(fileRecords)-1]
+				fileRecords = fileRecords[:len(fileRecords)-1]
 
 				fileRecordsJson, err := json.Marshal(fileRecords)
 				if err != nil {
