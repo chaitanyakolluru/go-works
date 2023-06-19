@@ -8,3 +8,12 @@ type Record struct {
 	Location    string   `json:"location"`
 	Todos       []string `json:"todos"`
 }
+
+func ValidateRecord(fileContents []Record, record Record) bool {
+	for _, rec := range fileContents {
+		if rec.Name == record.Name {
+			return false
+		}
+	}
+	return true
+}

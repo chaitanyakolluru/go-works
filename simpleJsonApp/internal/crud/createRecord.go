@@ -2,6 +2,7 @@ package crud
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"simpleJsonApp/internal/jsonFile"
@@ -25,6 +26,11 @@ func CreateRecord(c *gin.Context) {
 	}
 
 	record.Id = len(fileRecords) + 1
+
+	if !jsonFile.ValidateRecord(fileRecords, record) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": fmt.Sprintf("requested name: %s already exists", record.Name)})
+		return
+	}
 
 	fileRecords = append(fileRecords, record)
 
