@@ -4,7 +4,8 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	"simpleJsonApp/internal/jsonFile"
+
+	"github.com/chaitanyakolluru/go-works/simpleJsonApp/internal/jsonFile"
 
 	"github.com/gin-gonic/gin"
 )
