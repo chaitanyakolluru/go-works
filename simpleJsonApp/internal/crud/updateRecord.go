@@ -24,7 +24,7 @@ import (
 //	@Failure		500		{string}	string	"internal server error"
 //
 //	@Router			/record [put]
-func UpdateRecord(c *gin.Context) {
+func (client *Client) UpdateRecord(c *gin.Context) {
 	var record jsonFile.Record
 	var fileRecords []jsonFile.Record
 

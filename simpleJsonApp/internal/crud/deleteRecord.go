@@ -24,7 +24,7 @@ import (
 //	@Failure		500		{string}	string	"internal server error"
 //
 //	@Router			/record [delete]
-func DeleteRecord(c *gin.Context) {
+func (client *Client) DeleteRecord(c *gin.Context) {
 	var record jsonFile.Record
 	var fileRecords []jsonFile.Record
 

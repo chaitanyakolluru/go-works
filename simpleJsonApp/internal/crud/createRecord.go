@@ -24,7 +24,7 @@ import (
 //	@Failure		400		{string}	string	"failure message saying resource already exists"
 //	@Failure		500		{string}	string	"internal server error"
 //	@Router			/record [post]
-func CreateRecord(c *gin.Context) {
+func (client *Client) CreateRecord(c *gin.Context) {
 	var record jsonFile.Record
 	var fileRecords []jsonFile.Record
 
