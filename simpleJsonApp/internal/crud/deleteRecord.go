@@ -20,8 +20,8 @@ import (
 //	@Accept			json
 //	@Produce		json
 //	@Param			record	body		jsonFile.Record		true	"record to be deleted"
-//	@Success		200		{body}	jsonFile.Record	"deleted record"
-//	@Failure		500		{header}	string	"internal server error"
+//	@Success		200		{object}	jsonFile.Record	"deleted record"
+//	@Failure		500		{string}	string	"internal server error"
 //
 //	@Router			/record [delete]
 func DeleteRecord(c *gin.Context) {

@@ -51,13 +51,13 @@ const docTemplate = `{
                     "200": {
                         "description": "updated record",
                         "schema": {
-                            "type": "body"
+                            "$ref": "#/definitions/jsonFile.Record"
                         }
                     },
                     "500": {
                         "description": "internal server error",
                         "schema": {
-                            "type": "header"
+                            "type": "string"
                         }
                     }
                 }
@@ -86,19 +86,19 @@ const docTemplate = `{
                     "201": {
                         "description": "created record",
                         "schema": {
-                            "type": "body"
+                            "$ref": "#/definitions/jsonFile.Record"
                         }
                     },
                     "400": {
                         "description": "failure message saying resource already exists",
                         "schema": {
-                            "type": "header"
+                            "type": "string"
                         }
                     },
                     "500": {
                         "description": "internal server error",
                         "schema": {
-                            "type": "header"
+                            "type": "string"
                         }
                     }
                 }
@@ -127,13 +127,13 @@ const docTemplate = `{
                     "200": {
                         "description": "deleted record",
                         "schema": {
-                            "type": "body"
+                            "$ref": "#/definitions/jsonFile.Record"
                         }
                     },
                     "500": {
                         "description": "internal server error",
                         "schema": {
-                            "type": "header"
+                            "type": "string"
                         }
                     }
                 }
@@ -153,13 +153,16 @@ const docTemplate = `{
                     "200": {
                         "description": "get all records",
                         "schema": {
-                            "type": "body"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/jsonFile.Record"
+                            }
                         }
                     },
                     "500": {
                         "description": "internal server error",
                         "schema": {
-                            "type": "header"
+                            "type": "string"
                         }
                     }
                 }
@@ -188,13 +191,13 @@ const docTemplate = `{
                     "200": {
                         "description": "get a records",
                         "schema": {
-                            "type": "body"
+                            "$ref": "#/definitions/jsonFile.Record"
                         }
                     },
                     "500": {
                         "description": "internal server error",
                         "schema": {
-                            "type": "header"
+                            "type": "string"
                         }
                     }
                 }

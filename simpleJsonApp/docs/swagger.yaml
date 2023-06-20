@@ -47,11 +47,11 @@ paths:
         "200":
           description: deleted record
           schema:
-            type: body
+            $ref: '#/definitions/jsonFile.Record'
         "500":
           description: internal server error
           schema:
-            type: header
+            type: string
       summary: delete record
     post:
       consumes:
@@ -70,15 +70,15 @@ paths:
         "201":
           description: created record
           schema:
-            type: body
+            $ref: '#/definitions/jsonFile.Record'
         "400":
           description: failure message saying resource already exists
           schema:
-            type: header
+            type: string
         "500":
           description: internal server error
           schema:
-            type: header
+            type: string
       summary: create record
     put:
       consumes:
@@ -97,11 +97,11 @@ paths:
         "200":
           description: updated record
           schema:
-            type: body
+            $ref: '#/definitions/jsonFile.Record'
         "500":
           description: internal server error
           schema:
-            type: header
+            type: string
       summary: update record
   /records:
     get:
@@ -114,11 +114,13 @@ paths:
         "200":
           description: get all records
           schema:
-            type: body
+            items:
+              $ref: '#/definitions/jsonFile.Record'
+            type: array
         "500":
           description: internal server error
           schema:
-            type: header
+            type: string
       summary: get all records
   /records/{name}:
     get:
@@ -137,11 +139,11 @@ paths:
         "200":
           description: get a records
           schema:
-            type: body
+            $ref: '#/definitions/jsonFile.Record'
         "500":
           description: internal server error
           schema:
-            type: header
+            type: string
       summary: get a single record
 produces:
 - application/json

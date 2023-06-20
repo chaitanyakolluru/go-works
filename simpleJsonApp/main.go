@@ -4,6 +4,7 @@ import (
 	"simpleJsonApp/docs"
 	"simpleJsonApp/internal/crud"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
@@ -19,15 +20,23 @@ import (
 // @produce	json
 func main() {
 	router := gin.Default()
+
+	// Add CORS middleware, use cors.DefaultConfig() for default settings.
+	config := cors.DefaultConfig()
+	config.AllowAllOrigins = true
+
 	json := router.Group("/json")
 	docs.SwaggerInfo.BasePath = "/json"
 	docs.SwaggerInfo.Title = "Simple Json App"
+
 	json.POST("/record", crud.CreateRecord)
 	json.GET("/records", crud.GetRecords)
 	json.GET("/records/:name", crud.GetRecordsByName)
 	json.PUT("/record", crud.UpdateRecord)
 	json.DELETE("/record", crud.DeleteRecord)
+
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+	router.Use(cors.New(config))
 
 	router.Run("localhost:8080")
 }
