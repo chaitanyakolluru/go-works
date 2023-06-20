@@ -1,4 +1,4 @@
-module simpleJsonApp
+module github.com/chaitanyakolluru/go-works/simpleJsonApp
 
 go 1.20
 
