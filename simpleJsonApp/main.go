@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/chaitanyakolluru/go-works/simpleJsonApp/docs"
-	"github.com/chaitanyakolluru/go-works/simpleJsonApp/internal/crud"
+	"github.com/chaitanyakolluru/go-works/simpleJsonApp/pkg/crud"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
