@@ -15,7 +15,7 @@ import (
 // @description	This is a simple json app, apis of which will be fed into a crossplane provider.
 // @license.name	Apache 2.0
 // @license.url	http://www.apache.org/licenses/LICENSE-2.0.html
-// @host		localhost:8080
+// @host		localhost:8081
 // @accept 	json
 // @produce	json
 func main() {
@@ -37,5 +37,5 @@ func main() {
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 	router.Use(cors.New(config))
 
-	router.Run("localhost:8080")
+	router.Run("localhost:8081")
 }

@@ -10,7 +10,7 @@ Run project
 $ go run main.go
 ```
 
-Swagger page [here](http://localhost:8080/swagger/index.html)
+Swagger page [here](http://localhost:8081/swagger/index.html)
 
 Swagger home:
 ![Swagger page](./images/swagger1.png)
