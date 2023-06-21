@@ -15,8 +15,10 @@ Swagger page [here](http://localhost:8081/swagger/index.html)
 Swagger home:
 ![Swagger page](./images/swagger1.png)
 
-Example GET /records:
+Examples:
 ![Swagger page](./images/swagger2.png)
+
+![Swagger page](./images/swagger3.png)
 
 ## todo
 
