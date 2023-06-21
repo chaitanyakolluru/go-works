@@ -214,9 +214,6 @@ const docTemplate = `{
                 "designation": {
                     "type": "string"
                 },
-                "id": {
-                    "type": "integer"
-                },
                 "location": {
                     "type": "string"
                 },

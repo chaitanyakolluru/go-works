@@ -40,8 +40,6 @@ func (client *Client) CreateRecord(c *gin.Context) {
 		}
 	}
 
-	record.Id = len(fileRecords) + 1
-
 	if !jsonFile.ValidateRecord(fileRecords, record) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": fmt.Sprintf("requested name: %s already exists", record.Name)})
 		return

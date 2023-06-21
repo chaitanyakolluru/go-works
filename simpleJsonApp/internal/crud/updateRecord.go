@@ -42,7 +42,6 @@ func (client *Client) UpdateRecord(c *gin.Context) {
 		for index, rec := range fileRecords {
 			if rec.Name == record.Name {
 				fileRecords[index] = record
-				fileRecords[index].Id = rec.Id
 
 				fileRecordsJson, err := json.Marshal(fileRecords)
 				if err != nil {

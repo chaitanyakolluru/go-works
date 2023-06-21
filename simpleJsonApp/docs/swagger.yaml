@@ -1,5 +1,5 @@
 consumes:
-  - application/json
+- application/json
 definitions:
   jsonFile.Record:
     properties:
@@ -7,8 +7,6 @@ definitions:
         type: integer
       designation:
         type: string
-      id:
-        type: integer
       location:
         type: string
       name:
@@ -21,8 +19,7 @@ definitions:
 host: localhost:8081
 info:
   contact: {}
-  description:
-    This is a simple json app, apis of which will be fed into a crossplane
+  description: This is a simple json app, apis of which will be fed into a crossplane
     provider.
   license:
     name: Apache 2.0
@@ -33,22 +30,22 @@ paths:
   /record:
     delete:
       consumes:
-        - application/json
+      - application/json
       description: delete a record within the json file
       parameters:
-        - description: record to be deleted
-          in: body
-          name: record
-          required: true
-          schema:
-            $ref: "#/definitions/jsonFile.Record"
+      - description: record to be deleted
+        in: body
+        name: record
+        required: true
+        schema:
+          $ref: '#/definitions/jsonFile.Record'
       produces:
-        - application/json
+      - application/json
       responses:
         "200":
           description: deleted record
           schema:
-            $ref: "#/definitions/jsonFile.Record"
+            $ref: '#/definitions/jsonFile.Record'
         "500":
           description: internal server error
           schema:
@@ -56,22 +53,22 @@ paths:
       summary: delete record
     post:
       consumes:
-        - application/json
+      - application/json
       description: create a record within the json file
       parameters:
-        - description: record to be created
-          in: body
-          name: record
-          required: true
-          schema:
-            $ref: "#/definitions/jsonFile.Record"
+      - description: record to be created
+        in: body
+        name: record
+        required: true
+        schema:
+          $ref: '#/definitions/jsonFile.Record'
       produces:
-        - application/json
+      - application/json
       responses:
         "201":
           description: created record
           schema:
-            $ref: "#/definitions/jsonFile.Record"
+            $ref: '#/definitions/jsonFile.Record'
         "400":
           description: failure message saying resource already exists
           schema:
@@ -83,22 +80,22 @@ paths:
       summary: create record
     put:
       consumes:
-        - application/json
+      - application/json
       description: update a record within the json file
       parameters:
-        - description: record to be updated
-          in: body
-          name: record
-          required: true
-          schema:
-            $ref: "#/definitions/jsonFile.Record"
+      - description: record to be updated
+        in: body
+        name: record
+        required: true
+        schema:
+          $ref: '#/definitions/jsonFile.Record'
       produces:
-        - application/json
+      - application/json
       responses:
         "200":
           description: updated record
           schema:
-            $ref: "#/definitions/jsonFile.Record"
+            $ref: '#/definitions/jsonFile.Record'
         "500":
           description: internal server error
           schema:
@@ -107,16 +104,16 @@ paths:
   /records:
     get:
       consumes:
-        - application/json
+      - application/json
       description: gets all records within the json file
       produces:
-        - application/json
+      - application/json
       responses:
         "200":
           description: get all records
           schema:
             items:
-              $ref: "#/definitions/jsonFile.Record"
+              $ref: '#/definitions/jsonFile.Record'
             type: array
         "500":
           description: internal server error
@@ -126,26 +123,26 @@ paths:
   /records/{name}:
     get:
       consumes:
-        - application/json
+      - application/json
       description: gets a record within the json file
       parameters:
-        - description: name
-          in: path
-          name: name
-          required: true
-          type: string
+      - description: name
+        in: path
+        name: name
+        required: true
+        type: string
       produces:
-        - application/json
+      - application/json
       responses:
         "200":
           description: get a records
           schema:
-            $ref: "#/definitions/jsonFile.Record"
+            $ref: '#/definitions/jsonFile.Record'
         "500":
           description: internal server error
           schema:
             type: string
       summary: get a single record
 produces:
-  - application/json
+- application/json
 swagger: "2.0"

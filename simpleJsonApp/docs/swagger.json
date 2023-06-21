@@ -1,203 +1,224 @@
 {
-  "consumes": ["application/json"],
-  "produces": ["application/json"],
-  "swagger": "2.0",
-  "info": {
-    "description": "This is a simple json app, apis of which will be fed into a crossplane provider.",
-    "title": "Simple Json App",
-    "contact": {},
-    "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a simple json app, apis of which will be fed into a crossplane provider.",
+        "title": "Simple Json App",
+        "contact": {},
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "0.1.0"
     },
-    "version": "0.1.0"
-  },
-  "host": "localhost:8081",
-  "paths": {
-    "/record": {
-      "put": {
-        "description": "update a record within the json file",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
-        "summary": "update record",
-        "parameters": [
-          {
-            "description": "record to be updated",
-            "name": "record",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/jsonFile.Record"
+    "host": "localhost:8081",
+    "paths": {
+        "/record": {
+            "put": {
+                "description": "update a record within the json file",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "update record",
+                "parameters": [
+                    {
+                        "description": "record to be updated",
+                        "name": "record",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/jsonFile.Record"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "updated record",
+                        "schema": {
+                            "$ref": "#/definitions/jsonFile.Record"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "create a record within the json file",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "create record",
+                "parameters": [
+                    {
+                        "description": "record to be created",
+                        "name": "record",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/jsonFile.Record"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "created record",
+                        "schema": {
+                            "$ref": "#/definitions/jsonFile.Record"
+                        }
+                    },
+                    "400": {
+                        "description": "failure message saying resource already exists",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete a record within the json file",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "delete record",
+                "parameters": [
+                    {
+                        "description": "record to be deleted",
+                        "name": "record",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/jsonFile.Record"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "deleted record",
+                        "schema": {
+                            "$ref": "#/definitions/jsonFile.Record"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "updated record",
-            "schema": {
-              "$ref": "#/definitions/jsonFile.Record"
+        },
+        "/records": {
+            "get": {
+                "description": "gets all records within the json file",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "get all records",
+                "responses": {
+                    "200": {
+                        "description": "get all records",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/jsonFile.Record"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
             }
-          },
-          "500": {
-            "description": "internal server error",
-            "schema": {
-              "type": "string"
+        },
+        "/records/{name}": {
+            "get": {
+                "description": "gets a record within the json file",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "get a single record",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "name",
+                        "name": "name",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "get a records",
+                        "schema": {
+                            "$ref": "#/definitions/jsonFile.Record"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
             }
-          }
         }
-      },
-      "post": {
-        "description": "create a record within the json file",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
-        "summary": "create record",
-        "parameters": [
-          {
-            "description": "record to be created",
-            "name": "record",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/jsonFile.Record"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "created record",
-            "schema": {
-              "$ref": "#/definitions/jsonFile.Record"
-            }
-          },
-          "400": {
-            "description": "failure message saying resource already exists",
-            "schema": {
-              "type": "string"
-            }
-          },
-          "500": {
-            "description": "internal server error",
-            "schema": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "delete": {
-        "description": "delete a record within the json file",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
-        "summary": "delete record",
-        "parameters": [
-          {
-            "description": "record to be deleted",
-            "name": "record",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/jsonFile.Record"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "deleted record",
-            "schema": {
-              "$ref": "#/definitions/jsonFile.Record"
-            }
-          },
-          "500": {
-            "description": "internal server error",
-            "schema": {
-              "type": "string"
-            }
-          }
-        }
-      }
     },
-    "/records": {
-      "get": {
-        "description": "gets all records within the json file",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
-        "summary": "get all records",
-        "responses": {
-          "200": {
-            "description": "get all records",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/jsonFile.Record"
-              }
+    "definitions": {
+        "jsonFile.Record": {
+            "type": "object",
+            "properties": {
+                "age": {
+                    "type": "integer"
+                },
+                "designation": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "todos": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
             }
-          },
-          "500": {
-            "description": "internal server error",
-            "schema": {
-              "type": "string"
-            }
-          }
         }
-      }
-    },
-    "/records/{name}": {
-      "get": {
-        "description": "gets a record within the json file",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
-        "summary": "get a single record",
-        "parameters": [
-          {
-            "type": "string",
-            "description": "name",
-            "name": "name",
-            "in": "path",
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "get a records",
-            "schema": {
-              "$ref": "#/definitions/jsonFile.Record"
-            }
-          },
-          "500": {
-            "description": "internal server error",
-            "schema": {
-              "type": "string"
-            }
-          }
-        }
-      }
     }
-  },
-  "definitions": {
-    "jsonFile.Record": {
-      "type": "object",
-      "properties": {
-        "age": {
-          "type": "integer"
-        },
-        "designation": {
-          "type": "string"
-        },
-        "id": {
-          "type": "integer"
-        },
-        "location": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "todos": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    }
-  }
 }
