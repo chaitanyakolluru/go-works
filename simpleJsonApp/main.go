@@ -26,6 +26,8 @@ func main() {
 	config := cors.DefaultConfig()
 	config.AllowAllOrigins = true
 
+	router.GET("/auth", auth.GenerateToken)
+
 	json := router.Group("/json", auth.AuthMiddleware())
 	docs.SwaggerInfo.BasePath = "/json"
 	docs.SwaggerInfo.Title = "Simple Json App"

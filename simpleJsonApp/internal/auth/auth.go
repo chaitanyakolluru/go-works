@@ -1,9 +1,7 @@
 package auth
 
 import (
-	"errors"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"strings"
@@ -23,19 +21,19 @@ func getHmacSecret() []byte {
 	return []byte(hmacSecret)
 }
 
-func GenerateToken() (string, error) {
+func GenerateToken(c *gin.Context) {
 	hmacSecret := getHmacSecret()
 	if len(hmacSecret) == 0 {
-		return "", errors.New("environment variable HMAC_SECRET not set")
+		c.AbortWithStatus(http.StatusInternalServerError)
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{"admin": adminMap["admin"]})
 	tokenString, err := token.SignedString(hmacSecret)
 	if err != nil {
-		return "", err
+		c.AbortWithStatus(http.StatusInternalServerError)
 	}
 
-	return tokenString, nil
+	c.IndentedJSON(http.StatusCreated, tokenString)
 }
 
 func ParseAndValidate(tokenString string) (bool, error) {
@@ -65,19 +63,13 @@ func AuthMiddleware() gin.HandlerFunc {
 
 		var token string
 		if len(tokenSlice) == 1 {
-			tokenV, err := GenerateToken()
-			if err != nil {
-				c.AbortWithStatus(http.StatusInternalServerError)
-				log.Fatalf("fail to generate token, %v", err)
-			}
-			token = tokenV
+			c.AbortWithStatus(http.StatusInternalServerError)
 		} else {
 			token = tokenSlice[len(tokenSlice)-1]
 		}
 
 		valid, err := ParseAndValidate(token)
 
-		fmt.Println("valid is", valid, err)
 		if err != nil {
 			c.AbortWithStatus(http.StatusInternalServerError)
 			return
