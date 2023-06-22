@@ -22,7 +22,7 @@ import (
 //	@Success		200		{object}	[]jsonFile.Record	"get all records"
 //	@Failure		500		{string}	string	"internal server error"
 //	@Router			/records [get]
-func (client *Client) GetRecords(c *gin.Context) {
+func GetRecords(c *gin.Context) {
 	var fileRecords []jsonFile.Record
 	fileData := jsonFile.OpenFileAndReadData()
 	if len(fileData) != 0 {

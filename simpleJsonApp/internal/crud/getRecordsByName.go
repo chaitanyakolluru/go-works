@@ -23,7 +23,7 @@ import (
 //	@Success		200		{object}		jsonFile.Record	"get a records"
 //	@Failure		500		{string}	string	"internal server error"
 //	@Router			/records/{name}	[get]
-func (client *Client) GetRecordsByName(c *gin.Context) {
+func GetRecordsByName(c *gin.Context) {
 	name := c.Param("name")
 
 	var fileRecords []jsonFile.Record
