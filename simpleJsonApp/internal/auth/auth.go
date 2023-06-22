@@ -3,8 +3,11 @@ package auth
 import (
 	"errors"
 	"fmt"
+	"net/http"
 	"os"
+	"strings"
 
+	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 )
 
@@ -50,6 +53,25 @@ func ParseAndValidate(tokenString string) (bool, error) {
 	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
 		return claims["admin"] == adminMap["admin"], nil
 	}
+	return true, nil
+}
 
-	return false, nil
+func AuthMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		tokenValue := c.GetHeader("Authorization")
+		fmt.Println("token is ", tokenValue)
+		tokenSlice := strings.Split(tokenValue, "Bearer ")
+		token := tokenSlice[len(tokenSlice)-1]
+
+		valid, err := ParseAndValidate(token)
+		if err != nil {
+			c.AbortWithStatus(http.StatusInternalServerError)
+			return
+		}
+
+		if !valid {
+			c.AbortWithStatus(http.StatusUnauthorized)
+			return
+		}
+	}
 }

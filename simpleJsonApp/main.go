@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/chaitanyakolluru/go-works/simpleJsonApp/docs"
+	"github.com/chaitanyakolluru/go-works/simpleJsonApp/internal/auth"
 	"github.com/chaitanyakolluru/go-works/simpleJsonApp/internal/crud"
 
 	"github.com/gin-contrib/cors"
@@ -25,7 +26,7 @@ func main() {
 	config := cors.DefaultConfig()
 	config.AllowAllOrigins = true
 
-	json := router.Group("/json")
+	json := router.Group("/json", auth.AuthMiddleware())
 	docs.SwaggerInfo.BasePath = "/json"
 	docs.SwaggerInfo.Title = "Simple Json App"
 
