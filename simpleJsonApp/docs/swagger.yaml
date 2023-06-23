@@ -16,14 +16,12 @@ definitions:
           type: string
         type: array
     type: object
-host: localhost:8081
 info:
   contact: {}
   description: This is a simple json app, apis of which will be fed into a crossplane
     provider.
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Simple Json App
   version: 0.1.0
 paths:
@@ -119,6 +117,8 @@ paths:
           description: internal server error
           schema:
             type: string
+      security:
+      - ApiKeyAuth: []
       summary: get all records
   /records/{name}:
     get:
@@ -145,4 +145,9 @@ paths:
       summary: get a single record
 produces:
 - application/json
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

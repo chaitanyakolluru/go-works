@@ -22,6 +22,8 @@ import (
 //	@Success		200		{object}	[]jsonFile.Record	"get all records"
 //	@Failure		500		{string}	string	"internal server error"
 //	@Router			/records [get]
+//
+// @Security ApiKeyAuth
 func GetRecords(c *gin.Context) {
 	var fileRecords []jsonFile.Record
 	fileData := jsonFile.OpenFileAndReadData()

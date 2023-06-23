@@ -18,8 +18,7 @@ const docTemplate = `{
         "title": "{{.Title}}",
         "contact": {},
         "license": {
-            "name": "Apache 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+            "name": "Apache 2.0"
         },
         "version": "{{.Version}}"
     },
@@ -141,6 +140,11 @@ const docTemplate = `{
         },
         "/records": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "gets all records within the json file",
                 "consumes": [
                     "application/json"
@@ -228,13 +232,20 @@ const docTemplate = `{
                 }
             }
         }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
     }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "0.1.0",
-	Host:             "localhost:8081",
+	Host:             "",
 	BasePath:         "",
 	Schemes:          []string{},
 	Title:            "Simple Json App",

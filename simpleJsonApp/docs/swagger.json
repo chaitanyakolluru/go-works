@@ -11,12 +11,10 @@
         "title": "Simple Json App",
         "contact": {},
         "license": {
-            "name": "Apache 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+            "name": "Apache 2.0"
         },
         "version": "0.1.0"
     },
-    "host": "localhost:8081",
     "paths": {
         "/record": {
             "put": {
@@ -133,6 +131,11 @@
         },
         "/records": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "gets all records within the json file",
                 "consumes": [
                     "application/json"
@@ -219,6 +222,13 @@
                     }
                 }
             }
+        }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
         }
     }
 }

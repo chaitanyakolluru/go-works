@@ -15,10 +15,11 @@ import (
 // @version		0.1.0
 // @description	This is a simple json app, apis of which will be fed into a crossplane provider.
 // @license.name	Apache 2.0
-// @license.url	http://www.apache.org/licenses/LICENSE-2.0.html
-// @host		localhost:8081
 // @accept 	json
 // @produce	json
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
 func main() {
 	router := gin.Default()
 
@@ -26,7 +27,7 @@ func main() {
 	config := cors.DefaultConfig()
 	config.AllowAllOrigins = true
 
-	router.GET("/auth", auth.GenerateToken)
+	router.GET("/auth/token", auth.GenerateToken)
 
 	json := router.Group("/json", auth.AuthMiddleware())
 	docs.SwaggerInfo.BasePath = "/json"
