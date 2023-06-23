@@ -25,6 +25,23 @@ info:
   title: Simple Json App
   version: 0.1.0
 paths:
+  /auth/token:
+    get:
+      consumes:
+      - application/json
+      description: generates token based out of no credentials for now
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: token to be used
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
+      summary: generate a token
   /record:
     delete:
       consumes:
@@ -48,6 +65,8 @@ paths:
           description: internal server error
           schema:
             type: string
+      security:
+      - ApiKeyAuth: []
       summary: delete record
     post:
       consumes:
@@ -75,6 +94,8 @@ paths:
           description: internal server error
           schema:
             type: string
+      security:
+      - ApiKeyAuth: []
       summary: create record
     put:
       consumes:
@@ -98,6 +119,8 @@ paths:
           description: internal server error
           schema:
             type: string
+      security:
+      - ApiKeyAuth: []
       summary: update record
   /records:
     get:
@@ -142,6 +165,8 @@ paths:
           description: internal server error
           schema:
             type: string
+      security:
+      - ApiKeyAuth: []
       summary: get a single record
 produces:
 - application/json

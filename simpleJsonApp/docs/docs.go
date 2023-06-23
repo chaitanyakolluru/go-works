@@ -25,8 +25,39 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/auth/token": {
+            "get": {
+                "description": "generates token based out of no credentials for now",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "generate a token",
+                "responses": {
+                    "200": {
+                        "description": "token to be used",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/record": {
             "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "update a record within the json file",
                 "consumes": [
                     "application/json"
@@ -62,6 +93,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "create a record within the json file",
                 "consumes": [
                     "application/json"
@@ -103,6 +139,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "delete a record within the json file",
                 "consumes": [
                     "application/json"
@@ -174,6 +215,11 @@ const docTemplate = `{
         },
         "/records/{name}": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "gets a record within the json file",
                 "consumes": [
                     "application/json"

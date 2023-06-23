@@ -21,6 +21,18 @@ func getHmacSecret() []byte {
 	return []byte(hmacSecret)
 }
 
+// Generate token godoc
+//
+//	@Summary		generate a token
+//
+// @Schemes
+//
+//	@Description	generates token based out of no credentials for now
+//	@Accept			json
+//	@Produce		json
+//	@Success		200		{string}	string	"token to be used"
+//	@Failure		500		{string}	string	"internal server error"
+//	@Router			/auth/token [get]
 func GenerateToken(c *gin.Context) {
 	hmacSecret := getHmacSecret()
 	if len(hmacSecret) == 0 {
