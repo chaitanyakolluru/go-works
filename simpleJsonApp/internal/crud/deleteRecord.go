@@ -25,6 +25,8 @@ import (
 //	@Failure		500		{string}	string	"internal server error"
 //
 //	@Router			/record [delete]
+//
+// @Security ApiKeyAuth
 func DeleteRecord(c *gin.Context) {
 	var record jsonFile.Record
 	var fileRecords []jsonFile.Record

@@ -23,6 +23,8 @@ import (
 //	@Success		200		{object}		jsonFile.Record	"get a records"
 //	@Failure		500		{string}	string	"internal server error"
 //	@Router			/records/{name}	[get]
+//
+// @Security ApiKeyAuth
 func GetRecordsByName(c *gin.Context) {
 	name := c.Param("name")
 
