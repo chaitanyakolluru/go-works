@@ -15,11 +15,13 @@ Swagger page [here](http://localhost:8081/swagger/index.html)
 Swagger home:
 ![Swagger page](./images/swagger1.png)
 
-Examples:
+Get your JWT token:
+![Swagger page](./images/swagger4.png)
+
+and authenticate:
+![Swagger page](./images/swagger5.png)
+
+Examples: (auth token not shown in curl request)
 ![Swagger page](./images/swagger2.png)
 
 ![Swagger page](./images/swagger3.png)
-
-## todo
-
-- Auth and other cleanups
