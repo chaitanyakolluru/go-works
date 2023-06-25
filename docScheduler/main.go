@@ -24,5 +24,3 @@ func main() {
 	doctorWithSchedule := createSchedule()
 	fmt.Println(doctorWithSchedule)
 }
-
-// doc := Doctor{Name: "doc1"}
