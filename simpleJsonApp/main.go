@@ -42,5 +42,5 @@ func main() {
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 	router.Use(cors.New(config))
 
-	router.Run("localhost:8081")
+	router.Run("0.0.0.0:8081")
 }
