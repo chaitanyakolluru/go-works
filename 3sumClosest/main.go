@@ -20,7 +20,6 @@ func threeSumClosest(nums []int, target int) (closestSum int) {
 			}
 		}
 	}
-
 	return
 }
 
