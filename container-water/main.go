@@ -5,23 +5,11 @@ import (
 )
 
 func calculateCommonY(x, y int) int {
-	if x > y {
-		return x - subtractAndReturnPositive(x, y)
-	} else {
-		return y - subtractAndReturnPositive(x, y)
-	}
+	return y - x
 }
 
 func calculateArea(item1, item2 []int) int {
-	return subtractAndReturnPositive(item2[0], item1[0]) * calculateCommonY(item1[1], item2[1])
-}
-
-func subtractAndReturnPositive(a, b int) int {
-	if a > b {
-		return a - b
-	} else {
-		return b - a
-	}
+	return (item2[0] - item1[0]) * calculateCommonY(item1[1], item2[1])
 }
 
 func maxArea(height []int) (biggestArea int) {
