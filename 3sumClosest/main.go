@@ -2,25 +2,29 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
-func threeSumClosest(nums []int, target int) (closestSum int) {
-	for i, v := range nums {
-		for j, v2 := range nums {
-			if j != i {
-				for k, v3 := range nums {
-					if k != j && k != i {
-						sum := v + v2 + v3
-						fmt.Println("sum and all", sum, i, j, k)
-						if (target - closestSum) > (target - sum) {
-							closestSum = sum
-						}
-					}
+func threeSumClosest(nums []int, target int) int {
+	closestSum := math.MaxInt32
+	for i := 0; i < len(nums)-2; i++ {
+		for j := i + 1; j < len(nums)-1; j++ {
+			for k := j + 1; k < len(nums); k++ {
+				sum := nums[i] + nums[j] + nums[k]
+				if abs(target-sum) < abs(target-closestSum) {
+					closestSum = sum
 				}
 			}
 		}
 	}
-	return
+	return closestSum
+}
+
+func abs(num int) int {
+	if num < 0 {
+		return -num
+	}
+	return num
 }
 
 func main() {
