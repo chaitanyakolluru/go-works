@@ -5,12 +5,33 @@ import (
 	"strings"
 )
 
+func increaseCount(openParens []string, i string, count int) ([]string, int) {
+	openParens = append(openParens, i)
+	count++
+	return openParens, count
+}
+
+func decreaseCount(openParens []string, paren []string, count int) ([]string, int, bool) {
+	if len(openParens) >= 1 {
+		if paren[0] == openParens[len(openParens)-1] {
+			count--
+			openParens = openParens[:len(openParens)-1]
+		} else {
+			return openParens, count, false
+		}
+	} else {
+		return openParens, count, false
+	}
+	return openParens, count, true
+}
+
 func isValid(s string) bool {
 	paren1 := []string{"(", ")"}
 	paren2 := []string{"[", "]"}
 	paren3 := []string{"{", "}"}
 	listOfParens := [][]string{paren1, paren2, paren3}
 	var paren1Count, paren2Count, paren3Count int
+	var ret bool
 	openParens := make([]string, 0)
 
 	for _, i := range strings.Split(s, "") {
@@ -18,54 +39,31 @@ func isValid(s string) bool {
 			if i == li[0] {
 				switch k {
 				case 0:
-					openParens = append(openParens, i)
-					paren1Count++
+					openParens, paren1Count = increaseCount(openParens, i, paren1Count)
 				case 1:
-					openParens = append(openParens, i)
-					paren2Count++
+					openParens, paren2Count = increaseCount(openParens, i, paren2Count)
 				case 2:
-					openParens = append(openParens, i)
-					paren3Count++
+					openParens, paren3Count = increaseCount(openParens, i, paren3Count)
 				}
 				break
 			}
 			if i == li[1] {
 				switch k {
 				case 0:
-					if len(openParens) >= 1 {
-						if paren1[0] == openParens[len(openParens)-1] {
-							paren1Count--
-							openParens = openParens[:len(openParens)-1]
-						} else {
-							return false
-						}
-					} else {
+					openParens, paren1Count, ret = decreaseCount(openParens, paren1, paren1Count)
+					if !ret {
 						return false
 					}
 				case 1:
-					if len(openParens) >= 1 {
-						if paren2[0] == openParens[len(openParens)-1] {
-							paren2Count--
-							openParens = openParens[:len(openParens)-1]
-						} else {
-							return false
-						}
-					} else {
+					openParens, paren2Count, ret = decreaseCount(openParens, paren2, paren2Count)
+					if !ret {
 						return false
 					}
-
 				case 2:
-					if len(openParens) >= 1 {
-						if paren3[0] == openParens[len(openParens)-1] {
-							paren3Count--
-							openParens = openParens[:len(openParens)-1]
-						} else {
-							return false
-						}
-					} else {
+					openParens, paren3Count, ret = decreaseCount(openParens, paren3, paren3Count)
+					if !ret {
 						return false
 					}
-
 				}
 				break
 			}
