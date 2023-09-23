@@ -27,6 +27,7 @@ func isValid(s string) bool {
 					openParens = append(openParens, i)
 					paren3Count++
 				}
+				break
 			}
 			if i == li[1] {
 				switch k {
@@ -66,6 +67,7 @@ func isValid(s string) bool {
 					}
 
 				}
+				break
 			}
 		}
 	}
