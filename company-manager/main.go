@@ -27,9 +27,9 @@ func (c *Company) FireEmployee(e CompanyEmployee) {
 	}
 }
 
-func (c *Company) RaiseEmployee(to string, e CompanyEmployee, added float32) {
+func (c *Company) RaiseEmployee(to CompanyEmployee, e CompanyEmployee, added float32) {
 	emp, pay := e.GetDetails()
-	switch to {
+	switch to.GetType() {
 	case "Manager":
 		if len(pay) != 2 {
 			break
@@ -147,8 +147,8 @@ func main() {
 
 	cc.FireEmployee(salaried2)
 
-	cc.RaiseEmployee("Manager", salaried, 4000.00)
-	cc.RaiseEmployee("Executive", manager, 8000.00)
+	cc.RaiseEmployee(&Manager{}, salaried, 4000.00)
+	cc.RaiseEmployee(&Executive{}, manager, 8000.00)
 
 	for _, ce := range cc.Employees {
 		fmt.Println(ce.GetType())
