@@ -65,10 +65,50 @@ type Employee struct {
 	HireDate string
 }
 
+type withEmployeeOption func(e *Employee)
+
+func withHiredate(o string) withEmployeeOption {
+	return func(e *Employee) {
+		e.HireDate = o
+	}
+}
+
+func NewEmployee(opts ...withEmployeeOption) *Employee {
+	e := &Employee{}
+
+	for _, f := range opts {
+		f(e)
+	}
+	return e
+}
+
 type Salaried struct {
 	*Employee
 	Base  float32
 	Bonus float32
+}
+
+type withSalariedOption func(s *Salaried)
+
+func withBase(b float32) withSalariedOption {
+	return func(s *Salaried) { s.Base = b }
+}
+
+func withBonus(b float32) withSalariedOption {
+	return func(s *Salaried) { s.Bonus = b }
+}
+
+func withEmployeeEmbedded(e *Employee) withSalariedOption {
+	return func(s *Salaried) { s.Employee = e }
+}
+
+func NewSalaried(opts ...withSalariedOption) *Salaried {
+	s := &Salaried{}
+
+	for _, f := range opts {
+		f(s)
+	}
+	return s
 }
 
 func (s *Salaried) IsEmployee() bool { return true }
@@ -116,26 +156,9 @@ func (e *Executive) GetType() string {
 	return reflect.TypeOf(*e).Name()
 }
 
-type withEmployeeOption func(e *Employee)
-
-func withHiredate(o string) withEmployeeOption {
-	return func(e *Employee) {
-		e.HireDate = o
-	}
-}
-
-func NewEmployee(opts ...withEmployeeOption) *Employee {
-	e := &Employee{}
-
-	for _, f := range opts {
-		f(e)
-	}
-	return e
-}
-
 func main() {
-	salaried := &Salaried{Employee: NewEmployee(withHiredate("01-01-2023")), Base: 100000.00, Bonus: 10000.00}
-	salaried2 := &Salaried{Employee: NewEmployee(withHiredate("01-01-2013")), Base: 100000.00, Bonus: 10000.00}
+	salaried := NewSalaried(withEmployeeEmbedded(NewEmployee(withHiredate("01-01-2023"))), withBase(100000.00), withBonus(10000.00))
+	salaried2 := NewSalaried(withEmployeeEmbedded(NewEmployee(withHiredate("01-01-2013"))), withBase(100000.00), withBonus(10000.00))
 	manager := &Manager{Employee: NewEmployee(withHiredate("01-01-2020")), Base: 300000.00, Bonus: 20000.00, Stock: 4000.00}
 	executive := &Executive{Employee: NewEmployee(withHiredate("01-01-2010")), Base: 500000.00, Bonus: 40000.00, Stock: 8000.00, Additional: 10000.00}
 
