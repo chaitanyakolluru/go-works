@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: makecalls
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: view-access-to-makecalls
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: crossplane-view
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: makecalls
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: make-calls-to-k8s-resources
+  namespace: makecalls
+  labels:
+    app: make-calls-to-k8s-resources
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: make-calls-to-k8s-resources
+  template:
+    metadata:
+      labels:
+        app: make-calls-to-k8s-resources
+    spec:
+      containers:
+        - name: make-calls-to-k8s-resources
+          image: chaitanyah368/make-calls-to-k8s-resources:v0.0.0

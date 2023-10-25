@@ -41,7 +41,7 @@ func getRecord(client *dynamic.DynamicClient, record string) {
 	var r psjav1alpha1.Record
 	utils.Hydrate(result, &r)
 
-	fmt.Printf("record is: %s", &r.ObjectMeta.Name)
+	fmt.Printf("record is: %s, spec.Location: %s", r.ObjectMeta.Name, r.Spec.ForProvider.Location)
 }
 
 func main() {

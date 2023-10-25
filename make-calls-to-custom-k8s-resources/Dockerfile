@@ -15,14 +15,15 @@ RUN go mod download
 COPY main.go main.go
 COPY *.go ./
 
-RUN CGO_ENABLED=0 go build -o function .
+RUN CGO_ENABLED=0 go build -o makecalls .
 
 FROM docker.nexus.heb.tools/alpine:3.16.0
 
 RUN apk update && apk add --no-cache openssl \
     && rm -rf /var/cache/apk/*
 
-COPY --from=build-stage /fn/function /usr/local/bin/
+COPY --from=build-stage /fn/makecalls /usr/local/bin/
 
-ENTRYPOINT [ "/bin/sh", "-c" ]
+ENTRYPOINT ["sleep", "3600"]
+##ENTRYPOINT ["makecalls"]
 
