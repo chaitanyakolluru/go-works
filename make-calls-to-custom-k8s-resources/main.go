@@ -19,14 +19,12 @@ func main() {
 		log.Fatalf("error when creating dynamic client, err: %s", err)
 	}
 
-	result, err := utils.GetCustomResource(d, "example-record-new")
+	var r psjav1alpha1.Record
+	r, err = utils.GetCustomResource[psjav1alpha1.Record](d, r, "example-record-new")
 
 	if err != nil {
 		log.Fatalf("error with getting custom resource, err: %s", err)
 	}
-
-	var r psjav1alpha1.Record
-	utils.Hydrate(result, &r)
 
 	fmt.Printf("Using Utils: record is: %s, spec.Location: %s\n", r.ObjectMeta.Name, r.Spec.ForProvider.Location)
 }
