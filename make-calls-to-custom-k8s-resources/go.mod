@@ -5,8 +5,6 @@ go 1.21.0
 require (
 	git.heb.com/kub/composition-functions/resources/utils v0.0.0
 	git.heb.com/provider-simplejsonapp v0.0.0
-	k8s.io/apimachinery v0.28.3
-	k8s.io/client-go v0.28.3
 )
 
 require (
@@ -49,6 +47,8 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/api v0.28.3 // indirect
+	k8s.io/apimachinery v0.28.3 // indirect
+	k8s.io/client-go v0.28.3 // indirect
 	k8s.io/klog/v2 v2.100.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20230717233707-2695361300d9 // indirect
 	k8s.io/utils v0.0.0-20230505201702-9f6742963106 // indirect
@@ -60,7 +60,7 @@ require (
 )
 
 replace (
-	git.heb.com/kub/composition-functions/resources/utils v0.0.0 => gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/composition-functions/resources/utils.git v0.2.1-0.20231026000309-8329a422a9a9
+	git.heb.com/kub/composition-functions/resources/utils v0.0.0 => gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/composition-functions/resources/utils.git v0.3.0
 	git.heb.com/provider-simplejsonapp v0.0.0 => gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/learning/simplejsonapp/provider-simplejsonapp.git v0.1.0-temp
 	github.com/crossplane/function-sdk-go v0.0.0-20230930011419-ec31b88ab696 => github.com/dalton-hill-0/function-sdk-go v0.0.0-20231003210841-c5c85a7dc78f
 )
