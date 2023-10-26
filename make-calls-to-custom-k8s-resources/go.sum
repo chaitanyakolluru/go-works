@@ -535,8 +535,8 @@ github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9de
 github.com/yuin/goldmark v1.1.32/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
-gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/composition-functions/resources/utils.git v0.3.1-0.20231026150818-dbf496249c48 h1:Aji4n6IcZZ0LD+MeZCvcx11SRg8z3qu9T/WpUfwm+BY=
-gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/composition-functions/resources/utils.git v0.3.1-0.20231026150818-dbf496249c48/go.mod h1:B0oY+P3hNc+6ldwuP9FPBrdIQy4Ij2aUDlafqEyYzcM=
+gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/composition-functions/resources/utils.git v0.3.1 h1:jJMRBgEOXTLf/4ForjGU7oFkFAarH0dmcTUWT2AFkP8=
+gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/composition-functions/resources/utils.git v0.3.1/go.mod h1:B0oY+P3hNc+6ldwuP9FPBrdIQy4Ij2aUDlafqEyYzcM=
 gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/learning/simplejsonapp/provider-simplejsonapp.git v0.1.0-temp h1:D4DAPWwTq4h/+pivruGUodRY+6eyMhc+bLcK4njAqzw=
 gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/learning/simplejsonapp/provider-simplejsonapp.git v0.1.0-temp/go.mod h1:61wl4THEZC2JCZF/BD4B3fiYdFOXseApfU5XyHYOtHw=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
