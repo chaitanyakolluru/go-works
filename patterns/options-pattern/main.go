@@ -34,7 +34,26 @@ func main() {
 	example1 := newExample()
 	example2 := newExample(withOption1(2), withOption2("value set by options"))
 
-	fmt.Println(example1, example2)
+	fmt.Println(*example1, *example2)
+
+	example3 := newExample()
+	example3.
+		withOption1(3).
+		withOption2("value set by alternate options")
+
+	fmt.Println(*example3)
 }
 
 // more info on options pattern here: https://michalzalecki.com/golang-options-pattern/#:~:text=Functional%20Options%20Pattern%20also%20called,options%2C%20thus%20the%20pattern%20name.
+
+// another way to implement options with objects.
+
+func (e *example) withOption1(i int) *example {
+	e.option1 = i
+	return e
+}
+
+func (e *example) withOption2(s string) *example {
+	e.option2 = s
+	return e
+}
