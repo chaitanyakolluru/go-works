@@ -17,7 +17,7 @@ COPY *.go ./
 
 RUN CGO_ENABLED=0 go build -o makecalls .
 
-FROM docker.nexus.heb.tools/alpine:3.16.0
+FROM alpine:3.16.0
 
 RUN apk update && apk add --no-cache openssl \
     && rm -rf /var/cache/apk/*

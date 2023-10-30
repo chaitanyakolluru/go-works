@@ -539,6 +539,8 @@ gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/cross
 gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/composition-functions/resources/utils.git v0.3.1/go.mod h1:B0oY+P3hNc+6ldwuP9FPBrdIQy4Ij2aUDlafqEyYzcM=
 gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/learning/simplejsonapp/provider-simplejsonapp.git v0.1.0-temp h1:D4DAPWwTq4h/+pivruGUodRY+6eyMhc+bLcK4njAqzw=
 gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/learning/simplejsonapp/provider-simplejsonapp.git v0.1.0-temp/go.mod h1:61wl4THEZC2JCZF/BD4B3fiYdFOXseApfU5XyHYOtHw=
+gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/xrd.git v0.4.2 h1:A7HW/9NMUu5qgHzQk7Ji5UIwoHpJq6RJ9AzFHo+76Ls=
+gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/xrd.git v0.4.2/go.mod h1:0zeOXCAc92XEukzpXuDKNzZMbQrnG/41fCYZf58f8lw=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
 go.etcd.io/bbolt v1.3.6/go.mod h1:qXsaaIqmgQH0T+OPdb99Bf+PKfBBQVAdyD6TY9G8XM4=
 go.etcd.io/etcd/api/v3 v3.5.0/go.mod h1:cbVKeC6lCfl7j/8jBhAK6aIYO9XOjdptoxU/nLQcPvs=

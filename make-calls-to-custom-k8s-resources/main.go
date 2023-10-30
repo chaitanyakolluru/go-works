@@ -5,26 +5,27 @@ import (
 	"log"
 
 	utils "git.heb.com/kub/composition-functions/resources/utils"
-	psjav1alpha1 "git.heb.com/provider-simplejsonapp/apis/records/v1alpha1"
+	rv1alpha1 "git.heb.com/kub/xrd/api/iam/v1alpha1"
 )
 
 func main() {
+
 	d, err := utils.NewDynamicClient(
-		utils.WithGroup("records.simplejsonapp.crossplane.io"),
+		utils.WithGroup("iam.kub.heb.com"),
 		utils.WithVersion("v1alpha1"),
-		utils.WithResource("records"),
+		utils.WithResource("rosters"),
 	)
 
 	if err != nil {
 		log.Fatalf("error when creating dynamic client, err: %s", err)
 	}
 
-	var r psjav1alpha1.Record
-	r, err = utils.GetCustomResource[psjav1alpha1.Record](d, r, "example-record-new")
+	var r rv1alpha1.Roster
+	r, err = utils.GetCustomResource[rv1alpha1.Roster](d, r, "example-record-new")
 
 	if err != nil {
 		log.Fatalf("error with getting custom resource, err: %s", err)
 	}
 
-	fmt.Printf("Using Utils: record is: %s, spec.Location: %s\n", r.ObjectMeta.Name, r.Spec.ForProvider.Location)
+	fmt.Printf("stuff: %v", r.Spec)
 }

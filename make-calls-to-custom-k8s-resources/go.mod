@@ -4,7 +4,9 @@ go 1.21.0
 
 require (
 	git.heb.com/kub/composition-functions/resources/utils v0.0.0
+	git.heb.com/kub/xrd v0.0.0
 	git.heb.com/provider-simplejsonapp v0.0.0
+
 )
 
 require (
@@ -61,6 +63,8 @@ require (
 
 replace (
 	git.heb.com/kub/composition-functions/resources/utils v0.0.0 => gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/composition-functions/resources/utils.git v0.3.1
+	git.heb.com/kub/xrd v0.0.0 => gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/xrd.git v0.4.2
 	git.heb.com/provider-simplejsonapp v0.0.0 => gitlab.com/heb-engineering/teams/platform-engineering/gke-hybrid-cloud/kon/crossplane/learning/simplejsonapp/provider-simplejsonapp.git v0.1.0-temp
 	github.com/crossplane/function-sdk-go v0.0.0-20230930011419-ec31b88ab696 => github.com/dalton-hill-0/function-sdk-go v0.0.0-20231003210841-c5c85a7dc78f
+
 )
