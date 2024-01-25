@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"appservice-mod","Source":"git@ghe.aa.com:AA/terraform.git//azure-modules/appservice?ref=appservice-v2.2.1","Dir":".terraform/modules/appservice-mod/azure-modules/appservice"},{"Key":"","Source":"","Dir":"."}]}

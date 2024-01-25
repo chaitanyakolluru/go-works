@@ -1,0 +1,406 @@
+aa-aot-sais-nonprod-eastus-rg:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-location:
+  - eastus
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg
+  location:
+  - eastus
+  name:
+  - aa-aot-sais-nonprod-eastus-rg
+appserv-chai-1:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  always_on:
+  - false
+  app_command_line:
+  - ""
+  app_service_plan_id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/serverfarms/appserv-chai-plan
+  auto_swap_slot_name:
+  - ""
+  branch:
+  - master
+  client_affinity_enabled:
+  - true
+  client_cert_enabled:
+  - false
+  default_documents:
+  - Default.htm
+  - Default.html
+  - Default.asp
+  - index.htm
+  - index.html
+  - iisstart.htm
+  - default.aspx
+  - index.php
+  - hostingstart.html
+  default_provider:
+  - ""
+  default_site_hostname:
+  - appserv-chai-1.azurewebsites.net
+  dotnet_framework_version:
+  - v4.0
+  enabled:
+  - false
+  - true
+  ftps_state:
+  - AllAllowed
+  http2_enabled:
+  - false
+  https_only:
+  - false
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/sites/appserv-chai-1
+  issuer:
+  - ""
+  java_container:
+  - ""
+  java_container_version:
+  - ""
+  java_version:
+  - ""
+  linux_fx_version:
+  - ""
+  local_mysql_enabled:
+  - false
+  location:
+  - eastus
+  managed_pipeline_mode:
+  - Integrated
+  min_tls_version:
+  - "1.2"
+  name:
+  - appserv-chai-1
+  outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182
+  password:
+  - hJenomaQ5QWdf8fCpk4ifZC0gCEh3ANdBxi1F9DgGCAk81AmEi9jguXgWTEf
+  php_version:
+  - ""
+  possible_outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182,168.61.50.107,40.121.80.139,40.117.44.94,23.96.53.166,40.121.152.91
+  principal_id:
+  - 3590d425-813a-469c-ae8e-9019b1820ee7
+  python_version:
+  - ""
+  remote_debugging_enabled:
+  - false
+  remote_debugging_version:
+  - ""
+  repo_url:
+  - ""
+  resource_group_name:
+  - aa-aot-sais-nonprod-eastus-rg
+  runtime_version:
+  - ""
+  scm_type:
+  - None
+  tenant_id:
+  - 49793faf-eb3f-4d99-a0cf-aef7cce79dc1
+  token_refresh_extension_hours:
+  - 0
+  token_store_enabled:
+  - false
+  type:
+  - SystemAssigned
+  unauthenticated_client_action:
+  - ""
+  use_32_bit_worker_process:
+  - true
+  username:
+  - $appserv-chai-1
+  websockets_enabled:
+  - false
+  windows_fx_version:
+  - ""
+appserv-chai-2:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  always_on:
+  - false
+  app_command_line:
+  - ""
+  app_service_plan_id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/serverfarms/appserv-chai-plan
+  auto_swap_slot_name:
+  - ""
+  branch:
+  - master
+  client_affinity_enabled:
+  - true
+  client_cert_enabled:
+  - false
+  default_documents:
+  - Default.htm
+  - Default.html
+  - Default.asp
+  - index.htm
+  - index.html
+  - iisstart.htm
+  - default.aspx
+  - index.php
+  - hostingstart.html
+  default_provider:
+  - ""
+  default_site_hostname:
+  - appserv-chai-2.azurewebsites.net
+  dotnet_framework_version:
+  - v4.0
+  enabled:
+  - true
+  - false
+  ftps_state:
+  - AllAllowed
+  http2_enabled:
+  - false
+  https_only:
+  - false
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/sites/appserv-chai-2
+  issuer:
+  - ""
+  java_container:
+  - ""
+  java_container_version:
+  - ""
+  java_version:
+  - ""
+  linux_fx_version:
+  - ""
+  local_mysql_enabled:
+  - false
+  location:
+  - eastus
+  managed_pipeline_mode:
+  - Integrated
+  min_tls_version:
+  - "1.2"
+  name:
+  - appserv-chai-2
+  outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182
+  password:
+  - Xfzeg0L7Zwqk4uS939FT2TMomCY22pRAq5qrpHnWAxjl2LpaG8Q5QkY9QDoP
+  php_version:
+  - ""
+  possible_outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182,168.61.50.107,40.121.80.139,40.117.44.94,23.96.53.166,40.121.152.91
+  principal_id:
+  - e2234ef0-a7f6-45cd-baf5-a464aab175cd
+  python_version:
+  - ""
+  remote_debugging_enabled:
+  - false
+  remote_debugging_version:
+  - ""
+  repo_url:
+  - ""
+  resource_group_name:
+  - aa-aot-sais-nonprod-eastus-rg
+  runtime_version:
+  - ""
+  scm_type:
+  - None
+  tenant_id:
+  - 49793faf-eb3f-4d99-a0cf-aef7cce79dc1
+  token_refresh_extension_hours:
+  - 0
+  token_store_enabled:
+  - false
+  type:
+  - SystemAssigned
+  unauthenticated_client_action:
+  - ""
+  use_32_bit_worker_process:
+  - true
+  username:
+  - $appserv-chai-2
+  websockets_enabled:
+  - false
+  windows_fx_version:
+  - ""
+appserv-chai-3:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  always_on:
+  - false
+  app_command_line:
+  - ""
+  app_service_plan_id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/serverfarms/appserv-chai-plan
+  auto_swap_slot_name:
+  - ""
+  branch:
+  - master
+  client_affinity_enabled:
+  - true
+  client_cert_enabled:
+  - false
+  default_documents:
+  - Default.htm
+  - Default.html
+  - Default.asp
+  - index.htm
+  - index.html
+  - iisstart.htm
+  - default.aspx
+  - index.php
+  - hostingstart.html
+  default_provider:
+  - ""
+  default_site_hostname:
+  - appserv-chai-3.azurewebsites.net
+  dotnet_framework_version:
+  - v4.0
+  enabled:
+  - false
+  - true
+  ftps_state:
+  - AllAllowed
+  http2_enabled:
+  - false
+  https_only:
+  - false
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/sites/appserv-chai-3
+  issuer:
+  - ""
+  java_container:
+  - ""
+  java_container_version:
+  - ""
+  java_version:
+  - ""
+  linux_fx_version:
+  - ""
+  local_mysql_enabled:
+  - false
+  location:
+  - eastus
+  managed_pipeline_mode:
+  - Integrated
+  min_tls_version:
+  - "1.2"
+  name:
+  - appserv-chai-3
+  outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182
+  password:
+  - z0hbAosBqHANjPm2baWjYSoNzDCFEDR73iF2d7hyGlwJAmkqiznMsCHAetdo
+  php_version:
+  - ""
+  possible_outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182,168.61.50.107,40.121.80.139,40.117.44.94,23.96.53.166,40.121.152.91
+  principal_id:
+  - 69d2e609-d43d-4e06-91d9-a4f226914b43
+  python_version:
+  - ""
+  remote_debugging_enabled:
+  - false
+  remote_debugging_version:
+  - ""
+  repo_url:
+  - ""
+  resource_group_name:
+  - aa-aot-sais-nonprod-eastus-rg
+  runtime_version:
+  - ""
+  scm_type:
+  - None
+  tenant_id:
+  - 49793faf-eb3f-4d99-a0cf-aef7cce79dc1
+  token_refresh_extension_hours:
+  - 0
+  token_store_enabled:
+  - false
+  type:
+  - SystemAssigned
+  unauthenticated_client_action:
+  - ""
+  use_32_bit_worker_process:
+  - true
+  username:
+  - $appserv-chai-3
+  websockets_enabled:
+  - false
+  windows_fx_version:
+  - ""
+appserv-chai-plan:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  app_service_environment_id:
+  - ""
+  capacity:
+  - 1
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/serverfarms/appserv-chai-plan
+  is_xenon:
+  - false
+  kind:
+  - linux
+  location:
+  - eastus
+  name:
+  - appserv-chai-plan
+  per_site_scaling:
+  - false
+  reserved:
+  - true
+  resource_group_name:
+  - aa-aot-sais-nonprod-eastus-rg
+  size:
+  - S1
+  tier:
+  - Standard

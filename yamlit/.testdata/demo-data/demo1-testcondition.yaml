@@ -1,0 +1,15 @@
+appserv-chai-plan:
+    kind: linux
+    reserved: true 
+    is_xenon: false
+    size: S1
+    tier: Standard
+appserv-chai-1:
+    token_refresh_extension_hours: 0
+    principal_id: 3590d425-813a-469c-ae8e-9019b1820ee7
+    min_tls_version: "1.2"
+appserv-chai-2:
+appserv-chai-3:
+aa-aot-sais-nonprod-eastus-rg:
+    location: eastus
+    aa-app-id: "188020"

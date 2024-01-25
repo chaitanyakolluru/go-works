@@ -1,0 +1,23 @@
+
+storageaccountnamedemo:
+  location: eastus
+  resource_group_name: aa-aot-sais-nonprod-eastus-rg
+  account_tier: Standard
+  account_kind: StorageV2
+  account_replication_type: GRS
+  access_tier: Hot
+  default_action: Allow
+  bypass: AzureServices
+  enable_https_traffic_only: true
+democontainer1:
+  container_access_type: "container"
+democontainer2:
+  container_access_type: "container"
+appserv-chai-plan:
+    kind: linux
+    size: S1
+    tier: Standard
+appserv-chai-1:
+    min_tls_version: "1.2"
+appserv-chai-2:
+

@@ -1,0 +1,24 @@
+Please select the items needed by placing a 1 beside the item..
+
+Service_Principal_Authentication: 1
+
+aks: 
+apim: 
+app-insights: 
+appservice: 
+azure_sql: 
+cdn-profile: 
+container-registry: 
+cosmosdb: 
+eventhub: 
+function-app: 
+keyvault: 1
+log-analytics: 
+mysql_server: 
+resource-group: 
+route-table: 
+snet: 
+storage_account: 
+terraform-examples: 
+traffic-manager: 
+vnet: 

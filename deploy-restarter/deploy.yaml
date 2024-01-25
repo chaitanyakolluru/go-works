@@ -1,0 +1,63 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: deploy-restarter
+  name: deploy-restarter
+spec:
+  finalizers:
+    - kubernetes
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: deploy-restarter
+  name: deploy-restarter
+  namespace: deploy-restarter
+spec:
+  containers:
+    - command:
+        - sleep
+        - "3600"
+      image: deploy-restarter:testing
+      imagePullPolicy: IfNotPresent
+      name: deploy-restarter
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: deploy-restarter
+  namespace: deploy-restarter
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+    verbs:
+      - get
+  - apiGroups:
+      - apps
+    resources:
+      - deployments
+    verbs:
+      - get
+      - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: default-view
+  namespace: deploy-restarter
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: deploy-restarter
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: deploy-restarter
+---
+

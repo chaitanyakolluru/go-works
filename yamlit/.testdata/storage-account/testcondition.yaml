@@ -1,0 +1,9 @@
+demochaisa2:
+  error_404_document: error.html
+  index_document: index.html
+  access_tier: Hot
+  account_kind: StorageV2
+  account_replication_type: GRS
+  enable_https_traffic_only: true
+  bypass: AzureServices
+  resource_group_name: aa-aot-sais-nonprod-eastus-rg

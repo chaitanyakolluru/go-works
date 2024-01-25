@@ -82,24 +82,3 @@ func renderPrompt() (name, greeting string) {
 // your name...
 // chai
 // motd-practice ➤
-
-// motd-practice ➤ go build
-// motd-practice ➤ ls -ltr
-// total 4184
-// -rw-r--r--@ 1 k387899  staff       30 Mar  9 21:37 go.mod
-// drwxr-xr-x@ 3 k387899  staff       96 Mar  9 21:43 message
-// -rw-r--r--@ 1 k387899  staff       11 Mar  9 22:23 file
-// -rw-r--r--@ 1 k387899  staff     1826 Mar  9 22:23 main.go
-// -rwxr-xr-x@ 1 k387899  staff  2125938 Mar  9 22:34 motd-practice
-// motd-practice ➤ ./motd-practice
-// Usage of ./motd-practice:
-//   -greeting string
-//     	greeting phrase
-//   -name string
-//     	name to use
-//   -preview
-//     	use preview or no
-//   -prompt
-//     	use prompt or no
-// motd-practice ➤ ./motd-practice -name chai -greeting howdy! -preview
-// howdy! chai

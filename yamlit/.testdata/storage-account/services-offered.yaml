@@ -1,0 +1,22 @@
+Please input 1 on the resources you need creating..
+
+aks: 
+apim: 
+app-insights: 
+appservice:
+azure_sql: 
+cdn-profile: 
+container-registry: 
+cosmosdb: 
+eventhub: 
+function-app: 
+keyvault: 
+log-analytics: 
+mysql_server: 
+resource-group: 
+route-table: 
+snet: 
+storage_account: 1
+terraform-examples: 
+traffic-manager: 
+vnet: 

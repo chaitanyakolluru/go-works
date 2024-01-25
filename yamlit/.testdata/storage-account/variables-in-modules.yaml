@@ -1,0 +1,14 @@
+storage_account:
+  access_tier: Hot
+  account_kind: storageV2
+  account_replication_type: grs
+  account_tier: Standard
+  enable_https_traffic_only: true
+  enable_static_website: true
+  error_404_document: error.html
+  index_document: index.html
+  network_rules_bypass:
+  - AzureServices
+  resource_group_name: aa-aot-sais-nonprod-eastus-rg
+  storage_account_name: demochaisa2
+  version: storage-account-v1.1.2

@@ -1,0 +1,16 @@
+client_id: FILL OUT
+client_secret: FILL OUT
+keyvault:
+  access_policy: FILL OUT
+  enabled_for_deployment: FILL OUT
+  enabled_for_disk_encryption: FILL OUT
+  enabled_for_template_deployment: FILL OUT
+  keyvault_name: FILL OUT
+  keyvault_sku: FILL OUT
+  purge_protection_enabled: FILL OUT
+  resource_group_name: FILL OUT
+  secrets: FILL OUT
+  soft_delete_enabled: FILL OUT
+  version: FILL OUT
+subscription_id: FILL OUT
+tenant_id: FILL OUT

@@ -1,0 +1,425 @@
+aa-aot-sais-nonprod-eastus-rg:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-location:
+  - eastus
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg
+  location:
+  - eastus
+  name:
+  - aa-aot-sais-nonprod-eastus-rg
+appserv-chai-1:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-location:
+  - eastus
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  always_on:
+  - false
+  app_command_line:
+  - ""
+  app_service_plan_id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/serverfarms/appserv-chai-plan
+  auto_swap_slot_name:
+  - ""
+  branch:
+  - master
+  client_affinity_enabled:
+  - true
+  client_cert_enabled:
+  - false
+  default_documents:
+  - Default.htm
+  - Default.html
+  - Default.asp
+  - index.htm
+  - index.html
+  - iisstart.htm
+  - default.aspx
+  - index.php
+  - hostingstart.html
+  default_provider:
+  - ""
+  default_site_hostname:
+  - appserv-chai-1.azurewebsites.net
+  dotnet_framework_version:
+  - v4.0
+  enabled:
+  - false
+  - true
+  ftps_state:
+  - AllAllowed
+  http2_enabled:
+  - false
+  https_only:
+  - false
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/sites/appserv-chai-1
+  issuer:
+  - ""
+  java_container:
+  - ""
+  java_container_version:
+  - ""
+  java_version:
+  - ""
+  linux_fx_version:
+  - ""
+  local_mysql_enabled:
+  - false
+  location:
+  - eastus
+  managed_pipeline_mode:
+  - Integrated
+  min_tls_version:
+  - "1.2"
+  name:
+  - appserv-chai-1
+  outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182
+  password:
+  - tpXpm5uD6g1KL6bsvJMWtHzaXkHom2DzTLAJkymPtgmpc9RYM5uwjsZgyFZv
+  php_version:
+  - ""
+  possible_outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182,168.61.50.107,40.121.80.139,40.117.44.94,23.96.53.166,40.121.152.91
+  principal_id:
+  - a5ea2791-a855-42c4-bd62-98b9f4e4da08
+  python_version:
+  - ""
+  remote_debugging_enabled:
+  - false
+  remote_debugging_version:
+  - ""
+  repo_url:
+  - ""
+  resource_group_name:
+  - aa-aot-sais-nonprod-eastus-rg
+  runtime_version:
+  - ""
+  scm_type:
+  - None
+  tenant_id:
+  - 49793faf-eb3f-4d99-a0cf-aef7cce79dc1
+  token_refresh_extension_hours:
+  - 0
+  token_store_enabled:
+  - false
+  type:
+  - SystemAssigned
+  unauthenticated_client_action:
+  - ""
+  use_32_bit_worker_process:
+  - true
+  username:
+  - $appserv-chai-1
+  websockets_enabled:
+  - false
+  windows_fx_version:
+  - ""
+appserv-chai-2:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-location:
+  - eastus
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  always_on:
+  - false
+  app_command_line:
+  - ""
+  app_service_plan_id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/serverfarms/appserv-chai-plan
+  auto_swap_slot_name:
+  - ""
+  branch:
+  - master
+  client_affinity_enabled:
+  - true
+  client_cert_enabled:
+  - false
+  default_documents:
+  - Default.htm
+  - Default.html
+  - Default.asp
+  - index.htm
+  - index.html
+  - iisstart.htm
+  - default.aspx
+  - index.php
+  - hostingstart.html
+  default_provider:
+  - ""
+  default_site_hostname:
+  - appserv-chai-2.azurewebsites.net
+  dotnet_framework_version:
+  - v4.0
+  enabled:
+  - false
+  - true
+  ftps_state:
+  - AllAllowed
+  http2_enabled:
+  - false
+  https_only:
+  - false
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/sites/appserv-chai-2
+  issuer:
+  - ""
+  java_container:
+  - ""
+  java_container_version:
+  - ""
+  java_version:
+  - ""
+  linux_fx_version:
+  - ""
+  local_mysql_enabled:
+  - false
+  location:
+  - eastus
+  managed_pipeline_mode:
+  - Integrated
+  min_tls_version:
+  - "1.2"
+  name:
+  - appserv-chai-2
+  outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182
+  password:
+  - CvzMe0SEm0hmzuFssAR1h22mseJwKmTpruT8t3SKd57kd0szorabBs9xrtW8
+  php_version:
+  - ""
+  possible_outbound_ip_addresses:
+  - 40.71.11.140,40.121.154.115,13.82.228.43,40.121.158.167,40.117.44.182,168.61.50.107,40.121.80.139,40.117.44.94,23.96.53.166,40.121.152.91
+  principal_id:
+  - 868d6918-c8c5-4cb8-9f34-b19f18cb3feb
+  python_version:
+  - ""
+  remote_debugging_enabled:
+  - false
+  remote_debugging_version:
+  - ""
+  repo_url:
+  - ""
+  resource_group_name:
+  - aa-aot-sais-nonprod-eastus-rg
+  runtime_version:
+  - ""
+  scm_type:
+  - None
+  tenant_id:
+  - 49793faf-eb3f-4d99-a0cf-aef7cce79dc1
+  token_refresh_extension_hours:
+  - 0
+  token_store_enabled:
+  - false
+  type:
+  - SystemAssigned
+  unauthenticated_client_action:
+  - ""
+  use_32_bit_worker_process:
+  - true
+  username:
+  - $appserv-chai-2
+  websockets_enabled:
+  - false
+  windows_fx_version:
+  - ""
+appserv-chai-plan:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-location:
+  - eastus
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  app_service_environment_id:
+  - ""
+  capacity:
+  - 1
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Web/serverfarms/appserv-chai-plan
+  is_xenon:
+  - false
+  kind:
+  - linux
+  location:
+  - eastus
+  name:
+  - appserv-chai-plan
+  per_site_scaling:
+  - false
+  reserved:
+  - true
+  resource_group_name:
+  - aa-aot-sais-nonprod-eastus-rg
+  size:
+  - S1
+  tier:
+  - Standard
+democontainer1:
+  container_access_type:
+  - container
+  has_immutability_policy:
+  - false
+  has_legal_hold:
+  - false
+  id:
+  - https://storageaccountnamedemo.blob.core.windows.net/democontainer1
+  name:
+  - democontainer1
+  storage_account_name:
+  - storageaccountnamedemo
+democontainer2:
+  container_access_type:
+  - container
+  has_immutability_policy:
+  - false
+  has_legal_hold:
+  - false
+  id:
+  - https://storageaccountnamedemo.blob.core.windows.net/democontainer2
+  name:
+  - democontainer2
+  storage_account_name:
+  - storageaccountnamedemo
+storageaccountnamedemo:
+  aa-app-id:
+  - "188020"
+  aa-application:
+  - sais
+  aa-costcenter:
+  - 0900/1894
+  aa-sdlc-environment:
+  - nonprod
+  aa-security:
+  - reserved
+  aa-vertical:
+  - aot
+  access_tier:
+  - Hot
+  account_kind:
+  - StorageV2
+  account_replication_type:
+  - GRS
+  account_tier:
+  - Standard
+  bypass:
+  - AzureServices
+  default_action:
+  - Allow
+  delete:
+  - false
+  enable_https_traffic_only:
+  - true
+  enabled:
+  - true
+  - false
+  id:
+  - /subscriptions/0de836dc-fea8-4805-b578-5d70b530d15e/resourceGroups/aa-aot-sais-nonprod-eastus-rg/providers/Microsoft.Storage/storageAccounts/storageaccountnamedemo
+  include_apis:
+  - true
+  - false
+  is_hns_enabled:
+  - false
+  location:
+  - eastus
+  name:
+  - storageaccountnamedemo
+  primary_access_key:
+  - 1nbenKk7ZEknieK8Fmctc4RouHjBNlnTX59tguMQiHgyg0qpcbY5m0HUYv05J0RVpEMQOsfA9irNGNNi3Bqw8g==
+  primary_blob_connection_string:
+  - DefaultEndpointsProtocol=https;BlobEndpoint=https://storageaccountnamedemo.blob.core.windows.net/;AccountName=storageaccountnamedemo;AccountKey=1nbenKk7ZEknieK8Fmctc4RouHjBNlnTX59tguMQiHgyg0qpcbY5m0HUYv05J0RVpEMQOsfA9irNGNNi3Bqw8g==
+  primary_blob_endpoint:
+  - https://storageaccountnamedemo.blob.core.windows.net/
+  primary_blob_host:
+  - storageaccountnamedemo.blob.core.windows.net
+  primary_connection_string:
+  - DefaultEndpointsProtocol=https;AccountName=storageaccountnamedemo;AccountKey=1nbenKk7ZEknieK8Fmctc4RouHjBNlnTX59tguMQiHgyg0qpcbY5m0HUYv05J0RVpEMQOsfA9irNGNNi3Bqw8g==;EndpointSuffix=core.windows.net
+  primary_dfs_endpoint:
+  - https://storageaccountnamedemo.dfs.core.windows.net/
+  primary_dfs_host:
+  - storageaccountnamedemo.dfs.core.windows.net
+  primary_file_endpoint:
+  - https://storageaccountnamedemo.file.core.windows.net/
+  primary_file_host:
+  - storageaccountnamedemo.file.core.windows.net
+  primary_location:
+  - eastus
+  primary_queue_endpoint:
+  - https://storageaccountnamedemo.queue.core.windows.net/
+  primary_queue_host:
+  - storageaccountnamedemo.queue.core.windows.net
+  primary_table_endpoint:
+  - https://storageaccountnamedemo.table.core.windows.net/
+  primary_table_host:
+  - storageaccountnamedemo.table.core.windows.net
+  primary_web_endpoint:
+  - https://storageaccountnamedemo.z13.web.core.windows.net/
+  primary_web_host:
+  - storageaccountnamedemo.z13.web.core.windows.net
+  principal_id:
+  - 9ebc3837-19e3-4ac6-96e3-4f2b08d14461
+  read:
+  - false
+  resource_group_name:
+  - aa-aot-sais-nonprod-eastus-rg
+  retention_policy_days:
+  - 7
+  - 0
+  - 0
+  secondary_access_key:
+  - 99KPDaHhBDqjD5d7/wJMp03tD6YIR7v1Pmlrhw0tYPFmLI5Uc8ltIpQbTFm3c7jpGPc8TENXED+2dQVdghuSPg==
+  secondary_blob_connection_string:
+  - ""
+  secondary_connection_string:
+  - DefaultEndpointsProtocol=https;AccountName=storageaccountnamedemo;AccountKey=99KPDaHhBDqjD5d7/wJMp03tD6YIR7v1Pmlrhw0tYPFmLI5Uc8ltIpQbTFm3c7jpGPc8TENXED+2dQVdghuSPg==;EndpointSuffix=core.windows.net
+  secondary_location:
+  - westus
+  tenant_id:
+  - 49793faf-eb3f-4d99-a0cf-aef7cce79dc1
+  type:
+  - SystemAssigned
+  version:
+  - "1.0"
+  - "1.0"
+  - "1.0"
+  write:
+  - false
