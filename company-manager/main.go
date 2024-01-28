@@ -157,10 +157,29 @@ func (e *Executive) GetType() string {
 }
 
 func main() {
-	salaried := NewSalaried(withEmployeeEmbedded(NewEmployee(withHiredate("01-01-2023"))), withBase(100000.00), withBonus(10000.00))
-	salaried2 := NewSalaried(withEmployeeEmbedded(NewEmployee(withHiredate("01-01-2013"))), withBase(100000.00), withBonus(10000.00))
-	manager := &Manager{Employee: NewEmployee(withHiredate("01-01-2020")), Base: 300000.00, Bonus: 20000.00, Stock: 4000.00}
-	executive := &Executive{Employee: NewEmployee(withHiredate("01-01-2010")), Base: 500000.00, Bonus: 40000.00, Stock: 8000.00, Additional: 10000.00}
+	salaried := NewSalaried(
+		withEmployeeEmbedded(NewEmployee(withHiredate("01-01-2023"))),
+		withBase(100000.00),
+		withBonus(10000.00),
+	)
+	salaried2 := NewSalaried(
+		withEmployeeEmbedded(NewEmployee(withHiredate("01-01-2013"))),
+		withBase(100000.00),
+		withBonus(10000.00),
+	)
+	manager := &Manager{
+		Employee: NewEmployee(withHiredate("01-01-2020")),
+		Base:     300000.00,
+		Bonus:    20000.00,
+		Stock:    4000.00,
+	}
+	executive := &Executive{
+		Employee:   NewEmployee(withHiredate("01-01-2010")),
+		Base:       500000.00,
+		Bonus:      40000.00,
+		Stock:      8000.00,
+		Additional: 10000.00,
+	}
 
 	cc := &Company{}
 	cc.HireEmployee(salaried)
