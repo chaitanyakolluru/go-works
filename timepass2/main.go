@@ -44,25 +44,65 @@ type something struct {
 	goodThing
 }
 
-func main() {
+type testReceivers []string
 
-	s := &Chai{}
-	c := &Chai{}
-	s.withItem("chaitanya").
-		withItem(false).
-		withItem(0)
+func (t *testReceivers) printAll() {
+	for _, v := range *t {
+		fmt.Printf("element is: %s\n", v)
+	}
+}
 
-	c.withItemName("chaitanya", "something").
-		withItemName(false, "sselse").
-		withItemName(0, "thought")
+func (t *testReceivers) addElement(item string) {
+	*t = append(*t, item)
+}
 
-	fmt.Println(*s, *c)
-
-	ss := something{
-		goodThing: goodThing{
-			kindOfCool: "chaitanya",
-		},
+func (t *testReceivers) removeElement(item string) {
+	arr := *t
+	for i, v := range arr {
+		if v == item {
+			arr = append(arr[0:i], arr[i+1:]...)
+			break
+		}
 	}
 
-	fmt.Println(ss, ss.kindOfCool)
+	*t = arr
+
+}
+
+func main() {
+
+	// s := &Chai{}
+	// c := &Chai{}
+	// s.withItem("chaitanya").
+	//
+	//	withItem(false).
+	//	withItem(0)
+	//
+	// c.withItemName("chaitanya", "something").
+	//
+	//	withItemName(false, "sselse").
+	//	withItemName(0, "thought")
+	//
+	// fmt.Println(*s, *c)
+	//
+	//	ss := something{
+	//		goodThing: goodThing{
+	//			kindOfCool: "chaitanya",
+	//		},
+	//	}
+	//
+	// fmt.Println(ss, ss.kindOfCool)
+
+	trvar := &testReceivers{}
+	trvar.addElement("chaitanya")
+	trvar.addElement("is")
+	trvar.addElement("a")
+	trvar.addElement("good")
+	trvar.addElement("person")
+
+	trvar.printAll()
+
+	trvar.removeElement("person")
+
+	trvar.printAll()
 }
