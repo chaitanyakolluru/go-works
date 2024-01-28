@@ -26,7 +26,12 @@ func (s *simpleStructure) GetDetails() {
 	fmt.Printf("interests: %v\n", s.Interests)
 	fmt.Printf("happiness: %v\n", s.Happiness)
 	fmt.Printf("fulfilment: %v\n", s.Fulfilment)
-	fmt.Printf("happiness: %v, success: %v, growth: %v\n", s.workLife.Happiness, s.workLife.Success, s.workLife.Growth)
+	fmt.Printf(
+		"happiness: %v, success: %v, growth: %v\n",
+		s.workLife.Happiness,
+		s.workLife.Success,
+		s.workLife.Growth,
+	)
 }
 
 func simeplFun() {
@@ -34,7 +39,13 @@ func simeplFun() {
 		Name:       "chaitanya",
 		Age:        34,
 		Profession: "software engineer",
-		Interests:  []string{"tech", "kettlebells", "spirituality", "games", "code"},
+		Interests: []string{
+			"tech",
+			"kettlebells",
+			"spirituality",
+			"games",
+			"code",
+		},
 		Happiness:  0.6,
 		Fulfilment: 0.4,
 		workLife: workLife{Happiness: 0.5,

@@ -12,30 +12,30 @@ import "fmt"
 
 type Dog struct{}
 
-func (d *Dog) MakeNoise() { fmt.Println("bark") }
+func (d Dog) MakeNoise() { fmt.Println("bark") }
 
 type Cat struct{}
 
-func (c *Cat) MakeNoise() { fmt.Println("meow") }
+func (c Cat) MakeNoise() { fmt.Println("meow") }
 
 type Lion struct{}
 
-func (l *Lion) MakeNoise() { fmt.Println("roar") }
+func (l Lion) MakeNoise() { fmt.Println("roar") }
 
 type AnimalsInterface interface {
 	MakeNoise()
 }
 
 type Animal struct {
-	noise AnimalsInterface
-}
-
-func (a *Animal) MakeNoise() {
-	a.noise.MakeNoise()
+	AnimalsInterface
 }
 
 func main() {
-	for _, a := range []*Animal{{noise: &Dog{}}, {noise: &Cat{}}, {noise: &Lion{}}} {
+	for _, a := range []*Animal{
+		{AnimalsInterface: Dog{}},
+		{AnimalsInterface: Cat{}},
+		{AnimalsInterface: Lion{}},
+	} {
 		a.MakeNoise()
 	}
 
