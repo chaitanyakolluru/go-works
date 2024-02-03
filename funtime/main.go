@@ -35,6 +35,15 @@ type Same struct {
 	Different
 }
 
+type Funtime struct {
+	Same
+	Something string
+}
+
+type ActiveFunTime struct {
+	Funtime
+}
+
 func main() {
 	s := Same{
 		Different: *NewDifferent(
@@ -43,5 +52,18 @@ func main() {
 		),
 	}
 
-	fmt.Println(s)
+	a := ActiveFunTime{
+		Funtime: Funtime{
+			Same: Same{
+				Different: *NewDifferent(
+					withName("chaitanya"),
+					withAge(35),
+				),
+			},
+			Something: "something",
+		},
+	}
+
+	fmt.Println(s.Different.name)
+	fmt.Println(a.Different.name)
 }
