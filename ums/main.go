@@ -22,72 +22,66 @@ type User struct {
 
 var users []UserData
 
-type Context struct {
-	echo.Context
-	DB *gorm.DB
-}
-
-func saveUser(cc Context) error {
+func saveUser(c echo.Context) error {
 	u := new(User)
-	if err := cc.Bind(u); err != nil {
+	if err := c.Bind(u); err != nil {
 		return err
 	}
 
 	for _, user := range users {
 		if user.User.Name == u.Name {
-			return cc.JSON(http.StatusConflict, "user already exists")
+			return c.JSON(http.StatusConflict, "user already exists")
 		}
 	}
 
-	cc.DB.Create(&UserData{User: *u})
-
-	return cc.JSON(http.StatusCreated, u)
+	users = append(users, UserData{ID: len(users) + 1, User: *u})
+	return c.JSON(http.StatusCreated, u)
 }
 
-func deleteUser(cc Context) error {
-	id := cc.Param("id")
+func deleteUser(c echo.Context) error {
+	id := c.Param("id")
 
 	for i, user := range users {
 		if id == fmt.Sprintf("%d", user.ID) {
 			users = append(users[:i], users[i+1:]...)
-			return cc.JSON(http.StatusOK, id)
+			return c.JSON(http.StatusOK, id)
 		}
 	}
 
-	return cc.JSON(http.StatusNotFound, "user deleted")
+	return c.JSON(http.StatusNotFound, "user deleted")
 }
 
-func updateUser(cc Context) error {
-	id := cc.Param("id")
+func updateUser(c echo.Context) error {
+	id := c.Param("id")
 	u := new(User)
-	if err := cc.Bind(u); err != nil {
+	if err := c.Bind(u); err != nil {
 		return err
 	}
 
 	for i, user := range users {
 		if id == fmt.Sprintf("%d", user.ID) {
 			users[i].User = *u
-			return cc.JSON(http.StatusOK, users[i])
+			return c.JSON(http.StatusOK, users[i])
 		}
 	}
 
-	return cc.JSON(http.StatusNotFound, "user not found")
+	return c.JSON(http.StatusNotFound, "user not found")
 }
 
-func getUsers(cc Context) error {
-	return cc.JSON(http.StatusOK, users)
+func getUsers(c echo.Context) error {
+	return c.JSON(http.StatusOK, users)
 }
 
-func getUser(cc Context) error {
-	id := cc.Param("id")
+func getUser(c echo.Context) error {
+	id := c.Param("id")
 
 	for _, u := range users {
 		if id == fmt.Sprintf("%d", u.ID) {
-			return cc.JSON(http.StatusOK, u)
+			return c.JSON(http.StatusOK, u)
 		}
 	}
 
-	return cc.JSON(http.StatusNotFound, "user not found")
+	return c.JSON(http.StatusNotFound, "user not found")
 }
 
 func healthCheck(c echo.Context) error {
@@ -99,16 +93,9 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+	fmt.Println(db)
 
-	db.AutoMigrate(&UserData{})
 	e := echo.New()
-
-	e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
-		return func(c echo.Context) error {
-			cc := &Context{c, db}
-			return next(cc)
-		}
-	})
 
 	e.GET("/healthz", healthCheck)
 	e.POST("/users", saveUser)
